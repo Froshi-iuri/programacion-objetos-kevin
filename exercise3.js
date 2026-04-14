@@ -13,12 +13,22 @@ class Vehicle {
         this.model = model;
         this.year = year;
     }
-    car(make, model, year, doors){
-        super(make,model,year);
-        this.doors = doors
-    }
-    car(){
-        return `Make: ${this.make}, Model: ${this.model}, Year${this.year}, doors: ${this.doors}`
+    displayCar(){
+        return `Make: ${this.make}, Model: ${this.model}, Year${this.year}`
     }
 }
 
+class Car extends Vehicle{
+    door;
+    constructor(make, model, year, doors){
+        super(make, model, year)
+        this.doors = doors;
+    }
+
+    displayCar(){
+        return `Make: ${this.make}, Model: ${this.model}, Year: ${this.year}, doors: ${this.doors}`
+    }
+}
+
+let toyota = new Car("Toyota", "Carolla", 2022, 4);
+console.log(toyota.displayCar());
