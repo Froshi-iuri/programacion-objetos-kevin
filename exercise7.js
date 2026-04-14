@@ -15,6 +15,22 @@ class Book{
         this.publicationYear = publicationYear;
     }
     bookDetails(){
-        return `details book: title: ${this.title}. author: ${this.author}. ${this.publicationYear}`
+        return `details book: title: ${this.title}. author: ${this.author}. publication year: ${this.publicationYear}`
     }
 }
+
+class Ebook extends Book{
+    bookPrice;
+    constructor(title, author, publicationYear, bookPrice){
+        super(title, author, publicationYear);
+        this.bookPrice = bookPrice;
+    }
+
+    bookDetails(){
+        return `details book: title: ${this.title}. author: ${this.author}. publication year: ${this.publicationYear}.
+        book price: ${this.bookPrice}`
+    }
+}
+
+let book1 = new Ebook("El pricipito",  "Antoine de Saint-Exupéry", 1943, 34000);
+console.log(Ebook.bookDetails());
