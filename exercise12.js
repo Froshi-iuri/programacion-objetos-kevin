@@ -10,7 +10,6 @@ class University {
 
     constructor(universityName) {
         this.#universityName = universityName;
-        // Inicializamos como arreglo vacío para poder usar .push() después
         this.#departments = [];
     }
 
