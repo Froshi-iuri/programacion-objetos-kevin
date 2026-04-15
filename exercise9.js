@@ -12,12 +12,21 @@ class Bank{
         this.bank = bank;
     }
     addBranch(branch){
-        return `new Branches ${this.branches} was added in ${this.bank}`
+        this.allBranches.push(branch)
+        return `new Branches ${branch} was added in ${this.bank}`
     }
     removeBranch(branch){
-        return ` Branches ${this.branches} was deleted of ${this.bank}`
+        this.allBranches = this.allBranches.filter(b => b !== branch);
+        return `Branches ${branch} was deleted of ${this.bank}`
     }
     displayBranchs(){
-        return `all branches`
+        return `all branches: ${this.allBranches}`
     }
 }
+
+const newBranches = new Bank("bancolombia")
+console.log(newBranches.addBranch("norte"));
+console.log(newBranches.addBranch("sur"));
+console.log(newBranches.displayBranchs());
+console.log(newBranches.removeBranch("norte"));
+console.log(newBranches.displayBranchs());
